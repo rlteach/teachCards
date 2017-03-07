@@ -33,6 +33,8 @@ public class Player : NetworkBehaviour {
 				CardSprites.CardSprite	tCS = tHit.collider.gameObject.GetComponent<CardSprites.CardSprite> ();
 				if (tCS != null) {
 					tCS.Show = !tCS.Show;
+					CmdDelete (tCS.mCard.ID);
+					Destroy (tHit.collider.gameObject);
 				}
 			}
 		}
@@ -41,11 +43,17 @@ public class Player : NetworkBehaviour {
 	[Command]
 	public	void	CmdDeal() {
 		if (GM.ServerDealer != null) {
-			int tCard=GM.ServerDealer.GetCard ();
+			int tCard=GM.ServerDealer.DrawCard ();
 			if (tCard >= 0) {
 				mPlayerDeck.Add (tCard);
 			}
 		}
+	}
+
+	[Command]
+	public	void	CmdDelete(int vID) {
+		mPlayerDeck.Remove (vID);
+		GM.ServerDealer.ReturnCard (vID);
 	}
 
 	private void OnInventoryChanged(SyncListInt.Operation op, int index) {

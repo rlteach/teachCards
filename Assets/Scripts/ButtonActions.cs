@@ -8,4 +8,9 @@ public class ButtonActions : MonoBehaviour {
 			GM.LocalPlayer.CmdDeal ();
 		}
 	}
+
+	public	void	TestPress() {
+		Debug.Log ("Pressed:"+name);
+	}
+
 }

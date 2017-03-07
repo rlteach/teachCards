@@ -58,6 +58,9 @@ public class Card  {
 		}
 	}
 
+	static	public	string	 ToString(int vCard) {
+		return	string.Format ("{0} of {1}", (Ranks)(vCard % RankCount), (Suites)((vCard / RankCount) % SuitCount));
+	}
 
 	//This card
 	int	mID;
