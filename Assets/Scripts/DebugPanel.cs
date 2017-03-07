@@ -29,7 +29,7 @@ public class DebugPanel : MonoBehaviour {
 			}
 			return		tSB.ToString ();
 		}
-		return	"Start Server";
+		return	"Only availiable on server";
 	}
 
 }
