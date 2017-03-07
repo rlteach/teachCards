@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 
 
+//C# platorm independant card class
+
 public class Card  {
 
 	public	enum Suites	{

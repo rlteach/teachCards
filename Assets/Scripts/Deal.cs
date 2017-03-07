@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class Deal : NetworkBehaviour {
 
+
+	//Cards are just integers from 0-51
 	List<int>	mDealerDeck = new List<int> ();
 
 	public	List<int>	DealerDeck {
@@ -13,6 +15,7 @@ public class Deal : NetworkBehaviour {
 		}
 	}
 
+	//When server starts make a deck of 52 cards
 	public override void OnStartServer () {
 		base.OnStartServer ();
 		for (int i = 0; i < Card.Count; i++) {
@@ -25,13 +28,13 @@ public class Deal : NetworkBehaviour {
 		if (mDealerDeck.Count > 0) {
 			int	tIndex = Random.Range (0, mDealerDeck.Count);
 			int	tCard=mDealerDeck[tIndex];
-			mDealerDeck.RemoveAt (tIndex);
+			mDealerDeck.RemoveAt (tIndex);		//Remove drawn card from deck
 			return	tCard;
 		}
 		return	-1;		//No cards left
 	}
 
-	public	void	ReturnCard(int vID) {
+	public	void	ReturnCard(int vID) {		//Return card to dealer
 		mDealerDeck.Add (vID);
 	}
 }

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Makes card sprites dynamically from Spritesheet, adds collider also
+
 public class CardSprites : MonoBehaviour {
 	//For all cards
 	static	Sprite[] 	sSpritesFront;

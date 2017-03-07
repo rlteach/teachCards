@@ -3,6 +3,9 @@ using System.Collections;
 
 public class GM : MonoBehaviour {
 
+
+	//Static game manager, exposes core gameobjects in static form, for ease of use
+
 	static	GM	sGM;
 
 

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DebugPanel : MonoBehaviour {
 
+	//Show Debug info
 
 	Text	mDebugText;
 
